@@ -1,15 +1,10 @@
-package org.jit.sose.util;
-
-import org.jit.sose.constant.ResponseConstant;
-import org.jit.sose.response.CommonResp;
+package com.example.community.utils;
 
 import com.alibaba.fastjson.JSON;
 
 /**
  * 统一请求返回结果封装工具类
- * 
- * @author: 王越
- * @date: 2019年6月5日 上午10:50:13
+ *
  */
 public class ResponseUtil {
 	
@@ -20,10 +15,10 @@ public class ResponseUtil {
 	 * @return 成功结果集
 	 */
 	public static String success(Object obj) {
-		CommonResp resp = new CommonResp();
-		resp.setCode(ResponseConstant.SUCCESS);
-		resp.setMsg("请求成功");
-		resp.setObj(obj);
+		ResultInfo resp = new ResultInfo();
+		resp.setCode(200);
+		resp.setMessage("请求成功");
+		resp.setValue(obj);
 		return JSON.toJSONString(resp);
 	}
 
@@ -34,11 +29,11 @@ public class ResponseUtil {
 	 * @param msg 返回信息
 	 * @return 成功结果集
 	 */
-	public static String success(String msg, Object obj) {
-		CommonResp resp = new CommonResp();
-		resp.setCode(ResponseConstant.SUCCESS);
-		resp.setMsg(msg);
-		resp.setObj(obj);
+	public static String success(Integer code,String msg, Object obj) {
+		ResultInfo resp = new ResultInfo();
+		resp.setCode(200);
+		resp.setMessage(msg);
+		resp.setValue(obj);
 		return JSON.toJSONString(resp);
 	}
 
@@ -51,10 +46,10 @@ public class ResponseUtil {
 	 * @return 失败结果集
 	 */
 	public static String error(Integer code, String msg, Object obj) {
-		CommonResp resp = new CommonResp();
-		resp.setCode(ResponseConstant.SUCCESS);
-		resp.setMsg(msg);
-		resp.setObj(obj);
+		ResultInfo resp = new ResultInfo();
+		resp.setCode(400);
+		resp.setMessage(msg);
+		resp.setValue(obj);
 		return JSON.toJSONString(resp);
 	}
 
@@ -66,9 +61,9 @@ public class ResponseUtil {
 	 * @return 失败结果集
 	 */
 	public static String error(Integer code, String msg) {
-		CommonResp resp = new CommonResp();
+		ResultInfo resp = new ResultInfo();
 		resp.setCode(code);
-		resp.setMsg(msg);
+		resp.setMessage(msg);
 		return JSON.toJSONString(resp);
 	}
 
@@ -79,7 +74,7 @@ public class ResponseUtil {
 	 * @return
 	 */
 	public static String error(Integer code) {
-		CommonResp resp = new CommonResp();
+		ResultInfo resp = new ResultInfo();
 		resp.setCode(code);
 		return JSON.toJSONString(resp);
 	}

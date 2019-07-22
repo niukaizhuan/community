@@ -14,7 +14,7 @@ import java.io.IOException;
 
 
 @Configuration
-@MapperScan("com.example.community")
+@MapperScan("com.example.community.mapper")
 public class MybatisConfig {
     @Value("${spring.datasource.driver-class-name}")
     private String driverClassName;

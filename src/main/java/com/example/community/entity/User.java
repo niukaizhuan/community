@@ -4,16 +4,24 @@ import lombok.Data;
 
 @Data
 public class User {
-
     private Integer id;
 
-    private String accountId;
+    private String userName;
 
-    private String name;
+    private String password;
 
-    private String token;
+    private String email;
 
-    private Long gmtCreate;
+    private String phone;
 
-    private Long gmtModified;
+    private String qq;
+
+    private String wechat;
+
+    private String microBlog;
+
+    private String type;
+
+    private String state;
+
 }

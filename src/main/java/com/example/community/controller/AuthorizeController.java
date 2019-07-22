@@ -17,7 +17,7 @@ import java.util.UUID;
 
 @Controller
 public class AuthorizeController {
-
+/*
     private GithubProvider githubProvider;
     private UserMapper userMapper;
 
@@ -66,8 +66,8 @@ public class AuthorizeController {
         } else {
             //登录失败,重新登录
             return "redirect:/";
-        }
+        }*/
 
     }
 
-}
+

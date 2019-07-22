@@ -1,4 +1,4 @@
-package org.jit.sose.util;
+package com.example.community.utils;
 
 import java.security.SecureRandom;
 
